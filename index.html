@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolarVida | Paneles solares para hogar y empresa</title>
+  <meta name="description" content="Instalación de paneles solares para hogares y empresas. Calcula tu ahorro y solicita una cotización gratis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <span class="logo__icon">☀</span> Solar<strong>Vida</strong>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto" class="btn btn--small">Cotizar</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="tag">Energía limpia · Ahorro real</span>
+        <h1>Convierte el sol en <span class="highlight">ahorro</span> para tu hogar o negocio</h1>
+        <p>Diseñamos e instalamos sistemas de paneles solares a la medida. Reduce tu factura de luz hasta un 90% y protege el planeta.</p>
+        <div class="hero__actions">
+          <a href="#calculadora" class="btn">Calcular mi ahorro</a>
+          <a href="#contacto" class="btn btn--outline">Cotización gratis</a>
+        </div>
+        <ul class="hero__stats">
+          <li><strong data-count="500">0</strong><span>Instalaciones</span></li>
+          <li><strong data-count="25">0</strong><span>Años de garantía</span></li>
+          <li><strong data-count="90">0</strong><span>% de ahorro</span></li>
+        </ul>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="panel">
+          <div class="panel__grid">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="panel__stand"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="section" id="beneficios">
+    <div class="container">
+      <div class="section__head">
+        <span class="tag">¿Por qué energía solar?</span>
+        <h2>Beneficios que se notan desde el primer mes</h2>
+      </div>
+      <div class="grid grid--4">
+        <article class="card reveal">
+          <div class="card__icon">💰</div>
+          <h3>Ahorro inmediato</h3>
+          <p>Disminuye tu factura de energía desde el primer ciclo de facturación.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">🌱</div>
+          <h3>Energía limpia</h3>
+          <p>Reduce tu huella de carbono generando electricidad 100% renovable.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">🏠</div>
+          <h3>Valoriza tu propiedad</h3>
+          <p>Un inmueble con energía solar es más atractivo y aumenta su valor.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">🛡️</div>
+          <h3>Larga vida útil</h3>
+          <p>Paneles con garantía de rendimiento de hasta 25 años y bajo mantenimiento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="section section--alt" id="servicios">
+    <div class="container">
+      <div class="section__head">
+        <span class="tag">Servicios</span>
+        <h2>Soluciones solares para cada necesidad</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="service reveal">
+          <h3>Residencial</h3>
+          <p>Sistemas conectados a la red para casas y apartamentos. Paga menos luz sin cambiar tus hábitos.</p>
+          <ul>
+            <li>Desde 2 kWp</li>
+            <li>Monitoreo desde el celular</li>
+            <li>Instalación en 1–3 días</li>
+          </ul>
+        </article>
+        <article class="service service--featured reveal">
+          <span class="service__badge">Más solicitado</span>
+          <h3>Comercial e industrial</h3>
+          <p>Proyectos para negocios, bodegas y fábricas que buscan reducir costos operativos.</p>
+          <ul>
+            <li>Estudio de consumo detallado</li>
+            <li>Beneficios tributarios</li>
+            <li>Retorno de inversión acelerado</li>
+          </ul>
+        </article>
+        <article class="service reveal">
+          <h3>Aislado y con baterías</h3>
+          <p>Energía donde no llega la red, o respaldo para cortes de luz con almacenamiento.</p>
+          <ul>
+            <li>Fincas y zonas rurales</li>
+            <li>Baterías de litio</li>
+            <li>Autonomía configurable</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculadora -->
+  <section class="section" id="calculadora">
+    <div class="container calc">
+      <div class="calc__intro">
+        <span class="tag">Calculadora</span>
+        <h2>¿Cuánto podrías ahorrar?</h2>
+        <p>Ingresa los datos de tu factura y obtén un estimado del sistema que necesitas. El cálculo es aproximado; para un valor exacto solicita una visita técnica.</p>
+      </div>
+      <form class="calc__form" id="calcForm">
+        <label>
+          Consumo mensual (kWh)
+          <input type="number" id="consumo" min="1" value="250" required>
+        </label>
+        <label>
+          Precio por kWh ($)
+          <input type="number" id="precio" min="1" step="any" value="900" required>
+        </label>
+        <label>
+          Horas de sol pico al día
+          <input type="number" id="hsp" min="1" max="8" step="0.1" value="4.5" required>
+        </label>
+        <button type="submit" class="btn">Calcular</button>
+        <div class="calc__result" id="calcResult" hidden>
+          <div><span>Sistema sugerido</span><strong id="rKwp">—</strong></div>
+          <div><span>Paneles de 550 W</span><strong id="rPaneles">—</strong></div>
+          <div><span>Ahorro mensual</span><strong id="rMes">—</strong></div>
+          <div><span>Ahorro anual</span><strong id="rAnio">—</strong></div>
+          <div><span>CO₂ evitado al año</span><strong id="rCo2">—</strong></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="section section--alt" id="proceso">
+    <div class="container">
+      <div class="section__head">
+        <span class="tag">Cómo trabajamos</span>
+        <h2>De la cotización al ahorro en 4 pasos</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal"><span>1</span><h3>Diagnóstico</h3><p>Analizamos tu factura y consumo de energía.</p></li>
+        <li class="reveal"><span>2</span><h3>Diseño</h3><p>Visitamos el lugar y diseñamos el sistema ideal.</p></li>
+        <li class="reveal"><span>3</span><h3>Instalación</h3><p>Instalamos con personal certificado y equipos de calidad.</p></li>
+        <li class="reveal"><span>4</span><h3>Ahorro</h3><p>Monitoreamos tu sistema y te acompañamos siempre.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <span class="tag">Preguntas frecuentes</span>
+        <h2>Resolvemos tus dudas</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Funcionan los paneles en días nublados?</summary>
+          <p>Sí. La producción baja en días nublados, pero los paneles siguen generando energía con la luz difusa. El sistema se dimensiona con el promedio anual de radiación.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto mantenimiento necesitan?</summary>
+          <p>Muy poco: una limpieza periódica de los paneles y una revisión técnica anual son suficientes.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa con la energía que no consumo?</summary>
+          <p>En sistemas conectados a la red, los excedentes pueden entregarse a la red según la regulación local. En sistemas con baterías, se almacenan para usarlos en la noche.</p>
+        </details>
+        <details>
+          <summary>¿En cuánto tiempo recupero la inversión?</summary>
+          <p>Depende del consumo y del precio de la energía, pero normalmente entre 3 y 6 años. Después de eso, la energía es prácticamente gratis.</p>
+        </details>
+        <details>
+          <summary>¿Ofrecen financiación?</summary>
+          <p>Sí, contamos con opciones de pago a cuotas. Pregúntanos al solicitar tu cotización.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section section--cta" id="contacto">
+    <div class="container contact">
+      <div class="contact__info">
+        <h2>Solicita tu cotización gratis</h2>
+        <p>Déjanos tus datos y un asesor te contactará en menos de 24 horas.</p>
+        <ul>
+          <li>📞 <a href="tel:+570000000000">+57 000 000 0000</a></li>
+          <li>✉️ <a href="mailto:contacto@solarvida.com">contacto@solarvida.com</a></li>
+          <li>📍 Tu ciudad, tu país</li>
+        </ul>
+      </div>
+      <form class="contact__form" id="contactForm">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+        <input type="email" name="email" placeholder="Correo electrónico">
+        <select name="tipo" required>
+          <option value="">Tipo de proyecto</option>
+          <option>Residencial</option>
+          <option>Comercial / industrial</option>
+          <option>Aislado con baterías</option>
+        </select>
+        <textarea name="mensaje" rows="3" placeholder="Cuéntanos sobre tu proyecto"></textarea>
+        <button type="submit" class="btn btn--full">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>☀ SolarVida</span>
+      <span>© <span id="year"></span> SolarVida. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <a class="whatsapp" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">💬</a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
