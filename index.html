@@ -21,7 +21,7 @@
       <nav class="nav" id="nav">
         <a href="#beneficios">Beneficios</a>
         <a href="#servicios">Servicios</a>
-        <a href="#calculadora">Calculadora</a>
+        <a href="#simulador">Simulador</a>
         <a href="#proceso">Proceso</a>
         <a href="#faq">Preguntas</a>
         <a href="#contacto" class="btn btn--small">Cotizar</a>
@@ -38,7 +38,7 @@
         <h1>Convierte el sol en <span class="highlight">ahorro</span> para tu hogar o negocio</h1>
         <p>Diseñamos e instalamos sistemas de paneles solares a la medida. Reduce tu factura de luz hasta un 90% y protege el planeta.</p>
         <div class="hero__actions">
-          <a href="#calculadora" class="btn">Calcular mi ahorro</a>
+          <a href="#simulador" class="btn">Simular mi ahorro</a>
           <a href="#contacto" class="btn btn--outline">Cotización gratis</a>
         </div>
         <ul class="hero__stats">
@@ -129,36 +129,68 @@
     </div>
   </section>
 
-  <!-- Calculadora -->
-  <section class="section" id="calculadora">
-    <div class="container calc">
-      <div class="calc__intro">
-        <span class="tag">Calculadora</span>
-        <h2>¿Cuánto podrías ahorrar?</h2>
-        <p>Ingresa los datos de tu factura y obtén un estimado del sistema que necesitas. El cálculo es aproximado; para un valor exacto solicita una visita técnica.</p>
+  <!-- Simulador -->
+  <section class="section" id="simulador">
+    <div class="container">
+      <div class="section__head">
+        <span class="tag">Simulador</span>
+        <h2>¿Cuánto ahorras y en cuánto tiempo recuperas la inversión?</h2>
+        <p class="section__sub">Mueve los controles y mira el resultado al instante. Son valores aproximados; para un valor exacto solicita una visita técnica.</p>
       </div>
-      <form class="calc__form" id="calcForm">
-        <label>
-          Consumo mensual (kWh)
-          <input type="number" id="consumo" min="1" value="250" required>
-        </label>
-        <label>
-          Precio por kWh ($)
-          <input type="number" id="precio" min="1" step="any" value="900" required>
-        </label>
-        <label>
-          Horas de sol pico al día
-          <input type="number" id="hsp" min="1" max="8" step="0.1" value="4.5" required>
-        </label>
-        <button type="submit" class="btn">Calcular</button>
-        <div class="calc__result" id="calcResult" hidden>
-          <div><span>Sistema sugerido</span><strong id="rKwp">—</strong></div>
-          <div><span>Paneles de 550 W</span><strong id="rPaneles">—</strong></div>
-          <div><span>Ahorro mensual</span><strong id="rMes">—</strong></div>
-          <div><span>Ahorro anual</span><strong id="rAnio">—</strong></div>
-          <div><span>CO₂ evitado al año</span><strong id="rCo2">—</strong></div>
+      <div class="sim">
+        <form class="sim__controls" id="simForm">
+          <label class="sim__field">
+            <span class="sim__label">Valor de tu factura de luz al mes <output id="oFactura"></output></span>
+            <input type="range" id="factura" min="50000" max="5000000" step="10000" value="300000">
+          </label>
+          <label class="sim__field">
+            <span class="sim__label">Ciudad</span>
+            <select id="ciudad"></select>
+          </label>
+          <fieldset class="sim__field">
+            <legend class="sim__label">Tipo de proyecto</legend>
+            <div class="sim__tipos" id="tipos"></div>
+          </fieldset>
+          <label class="sim__field">
+            <span class="sim__label">¿Qué parte de tu consumo quieres cubrir? <output id="oCobertura"></output></span>
+            <input type="range" id="cobertura" min="30" max="100" step="5" value="90">
+          </label>
+          <details class="sim__mas">
+            <summary>Ajustes avanzados</summary>
+            <label class="sim__field">
+              <span class="sim__label">Precio del kWh en tu factura ($)</span>
+              <input type="number" id="precio" min="100" max="5000" step="10" value="950">
+            </label>
+            <label class="sim__field">
+              <span class="sim__label">Aumento anual de la tarifa <output id="oAlza"></output></span>
+              <input type="range" id="alza" min="0" max="15" step="1" value="5">
+            </label>
+          </details>
+        </form>
+
+        <div class="sim__out" aria-live="polite">
+          <div class="sim__kpis">
+            <div class="kpi kpi--main"><span>Recuperas la inversión en</span><strong id="rRetorno">—</strong></div>
+            <div class="kpi"><span>Ahorro el primer año</span><strong id="rAnio">—</strong></div>
+            <div class="kpi"><span>Inversión aproximada</span><strong id="rInversion">—</strong></div>
+            <div class="kpi"><span>Ahorro neto en 25 años</span><strong id="rNeto">—</strong></div>
+          </div>
+          <div class="sim__chart">
+            <div class="sim__chart-head">
+              <h3>Ahorro acumulado vs. inversión</h3>
+              <div class="sim__leyenda"><span class="l-ahorro">Ahorro acumulado</span><span class="l-inv">Inversión</span></div>
+            </div>
+            <svg id="simChart" viewBox="0 0 600 260" role="img" aria-label="Gráfica del ahorro acumulado durante 25 años"></svg>
+          </div>
+          <ul class="sim__sistema">
+            <li><strong id="rKwp">—</strong><span>Sistema</span></li>
+            <li><strong id="rPaneles">—</strong><span>Paneles de 550 W</span></li>
+            <li><strong id="rArea">—</strong><span>Área de techo</span></li>
+            <li><strong id="rCo2">—</strong><span>CO₂ evitado al año</span></li>
+          </ul>
+          <button type="button" class="btn btn--full" id="simWhatsapp">Enviar mi simulación por WhatsApp</button>
         </div>
-      </form>
+      </div>
     </div>
   </section>
 

@@ -150,16 +150,6 @@ a { color: inherit; text-decoration: none; }
 .service li { padding: 6px 0 6px 26px; position: relative; }
 .service li::before { content: "✔"; position: absolute; left: 0; color: var(--primary); }
 
-/* Calculadora */
-.calc { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-.calc__intro p { color: var(--muted); margin-top: 14px; }
-.calc__form {
-  background: var(--navy); color: #fff; padding: 32px;
-  border-radius: var(--radius); box-shadow: var(--shadow);
-  display: grid; gap: 16px;
-}
-.calc__form label { display: grid; gap: 6px; font-size: .9rem; color: #cbd5e1; }
-
 input, select, textarea {
   font-family: inherit; font-size: 1rem;
   padding: 12px 14px; border-radius: 10px;
@@ -168,13 +158,63 @@ input, select, textarea {
 }
 input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); border-color: transparent; }
 
-.calc__result {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-  margin-top: 8px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.15);
+/* Simulador */
+.section__sub { color: var(--muted); margin-top: 12px; }
+.sim { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px; align-items: start; }
+.sim__controls {
+  background: var(--navy); color: #fff; padding: 30px;
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  display: grid; gap: 22px;
 }
-.calc__result div { background: rgba(255,255,255,.07); padding: 12px; border-radius: 10px; }
-.calc__result span { display: block; font-size: .8rem; color: #cbd5e1; }
-.calc__result strong { font-size: 1.2rem; color: var(--primary); }
+.sim__field { display: grid; gap: 8px; border: 0; min-width: 0; }
+.sim__label { display: flex; justify-content: space-between; gap: 10px; font-size: .9rem; color: #cbd5e1; }
+.sim__label output { color: var(--primary); font-weight: 600; white-space: nowrap; }
+.sim__controls input[type=range] { padding: 0; border: 0; background: none; accent-color: var(--primary); height: 28px; cursor: pointer; }
+.sim__controls input[type=range]:focus { outline: none; }
+.sim__controls input[type=range]:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.sim__tipos { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.chip span {
+  display: block; padding: 8px 14px; border-radius: 999px; font-size: .88rem;
+  border: 1px solid rgba(255,255,255,.25); color: #e2e8f0; transition: .2s;
+}
+.chip input:checked + span { background: var(--primary); border-color: var(--primary); color: var(--navy); font-weight: 600; }
+.chip input:focus-visible + span { outline: 2px solid #fff; outline-offset: 2px; }
+.sim__mas { border-top: 1px solid rgba(255,255,255,.15); padding-top: 16px; }
+.sim__mas summary { cursor: pointer; font-size: .9rem; color: #cbd5e1; }
+.sim__mas[open] summary { margin-bottom: 16px; }
+.sim__mas .sim__field + .sim__field { margin-top: 16px; }
+
+.sim__out { display: grid; gap: 18px; min-width: 0; }
+.sim__kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpi { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px; }
+.kpi span { display: block; font-size: .78rem; color: var(--muted); line-height: 1.3; }
+.kpi strong { display: block; font-size: 1.25rem; color: var(--navy); margin-top: 4px; line-height: 1.2; }
+.kpi--main { background: var(--primary); }
+.kpi--main span { color: var(--navy); }
+.sim__chart { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 18px 8px; }
+.sim__chart-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.sim__chart h3 { font-size: 1rem; color: var(--navy); }
+.sim__leyenda { display: flex; gap: 16px; font-size: .8rem; color: var(--muted); }
+.sim__leyenda span::before { content: ""; display: inline-block; width: 14px; height: 3px; margin-right: 6px; vertical-align: middle; border-radius: 2px; }
+.l-ahorro::before { background: var(--primary); }
+.l-inv::before { background: var(--navy); }
+#simChart { width: 100%; height: auto; display: block; }
+.g-guia { stroke: #e5e7eb; }
+.g-eje { fill: var(--muted); font-size: 11px; font-family: inherit; }
+.g-area { fill: rgba(245, 158, 11, .14); }
+.g-ahorro { fill: none; stroke: var(--primary); stroke-width: 3; stroke-linejoin: round; }
+.g-inv { stroke: var(--navy); stroke-width: 2; stroke-dasharray: 6 5; }
+.g-marca { stroke: var(--navy); stroke-width: 1; stroke-dasharray: 2 4; }
+.g-punto { fill: #fff; stroke: var(--navy); stroke-width: 3; }
+.g-nota { fill: var(--navy); font-size: 12px; font-weight: 600; font-family: inherit; }
+.sim__sistema {
+  list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;
+  background: var(--bg-alt); border-radius: var(--radius); padding: 14px 16px;
+}
+.sim__sistema strong { display: block; color: var(--navy); font-size: 1.05rem; }
+.sim__sistema span { font-size: .78rem; color: var(--muted); }
 
 /* Pasos */
 .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
@@ -230,7 +270,8 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); b
 @media (max-width: 960px) {
   .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .grid--3, .steps { grid-template-columns: repeat(2, 1fr); }
-  .hero__inner, .calc, .contact { grid-template-columns: 1fr; }
+  .hero__inner, .sim, .contact { grid-template-columns: 1fr; }
+  .sim__kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero__art { height: 300px; }
   .service--featured, .service--featured.reveal.visible { transform: none; }
 }
@@ -245,6 +286,9 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); b
   .nav.open { display: flex; }
   .header { background: var(--navy); }
   .grid--4, .grid--3, .steps { grid-template-columns: 1fr; }
-  .calc__result { grid-template-columns: 1fr; }
+  .sim__sistema { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sim__controls { padding: 22px; }
+  .g-eje { font-size: 16px; }
+  .g-nota { font-size: 17px; }
   .section { padding: 70px 0; }
 }

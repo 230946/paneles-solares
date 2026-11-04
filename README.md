@@ -11,7 +11,7 @@ Abre `index.html` con doble clic en el navegador.
 ```
 index.html      Página principal (todas las secciones)
 css/styles.css  Estilos y colores (variables en :root)
-js/main.js      Menú, calculadora de ahorro y envío por WhatsApp
+js/main.js      Menú, simulador de ahorro e inversión y envío por WhatsApp
 img/            Imágenes propias (logo, fotos de instalaciones)
 ```
 
@@ -21,7 +21,7 @@ img/            Imágenes propias (logo, fotos de instalaciones)
 - **WhatsApp:** cambia `WHATSAPP` al inicio de `js/main.js`.
 - **Teléfono, correo y dirección:** sección `#contacto` de `index.html`.
 - **Colores:** variables `--primary` y `--navy` en `css/styles.css`.
-- **Supuestos de la calculadora:** constantes al inicio de `js/main.js`.
+- **Simulador:** costo por kWp de cada tipo de proyecto, horas de sol de cada ciudad y demás supuestos al inicio de `js/main.js`.
 
 ## Fotos
 
