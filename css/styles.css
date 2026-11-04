@@ -93,26 +93,18 @@ a { color: inherit; text-decoration: none; }
 .hero__stats span { color: #cbd5e1; font-size: .9rem; }
 
 .hero__art { position: relative; height: 380px; }
+.hero__photo {
+  position: absolute; inset: 30px 0 0 0; width: 100%; height: calc(100% - 30px);
+  object-fit: cover; border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0,0,0,.3);
+}
 .sun {
-  position: absolute; top: 0; right: 20px;
-  width: 130px; height: 130px; border-radius: 50%;
+  position: absolute; top: 0; right: -10px;
+  width: 90px; height: 90px; border-radius: 50%;
   background: radial-gradient(circle, #fde68a, var(--primary));
   box-shadow: 0 0 80px 20px rgba(245, 158, 11, .45);
   animation: pulse 4s ease-in-out infinite;
 }
-.panel { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 320px; }
-.panel__grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
-  background: #cbd5e1; padding: 6px; border-radius: 6px;
-  transform: perspective(600px) rotateX(35deg);
-  box-shadow: 0 20px 40px rgba(0,0,0,.3);
-}
-.panel__grid span {
-  aspect-ratio: 1 / 1.3;
-  background: linear-gradient(135deg, #1d4ed8, #1e3a8a 60%, #3b82f6);
-  border-radius: 2px;
-}
-.panel__stand { width: 14px; height: 70px; background: #94a3b8; margin: -10px auto 0; }
 
 @keyframes pulse {
   50% { box-shadow: 0 0 110px 35px rgba(245, 158, 11, .55); }
@@ -143,8 +135,12 @@ a { color: inherit; text-decoration: none; }
   border-top: 4px solid var(--navy-light);
 }
 .service--featured { border-top-color: var(--primary); transform: scale(1.03); }
+.service__img {
+  display: block; width: calc(100% + 56px); max-width: none; height: 170px; object-fit: cover;
+  margin: -34px -28px 24px; border-radius: 6px 6px 0 0;
+}
 .service__badge {
-  position: absolute; top: -14px; right: 20px;
+  position: absolute; top: -14px; right: 20px; z-index: 1;
   background: var(--primary); color: #fff; font-size: .75rem; font-weight: 600;
   padding: 4px 12px; border-radius: 999px;
 }
@@ -250,6 +246,5 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--primary); b
   .header { background: var(--navy); }
   .grid--4, .grid--3, .steps { grid-template-columns: 1fr; }
   .calc__result { grid-template-columns: 1fr; }
-  .panel { width: 260px; }
   .section { padding: 70px 0; }
 }

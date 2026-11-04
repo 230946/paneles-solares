@@ -22,3 +22,8 @@ img/            Imágenes propias (logo, fotos de instalaciones)
 - **Teléfono, correo y dirección:** sección `#contacto` de `index.html`.
 - **Colores:** variables `--primary` y `--navy` en `css/styles.css`.
 - **Supuestos de la calculadora:** constantes al inicio de `js/main.js`.
+
+## Fotos
+
+Las fotos de `img/` son de [Unsplash](https://unsplash.com) (licencia libre, uso comercial permitido).
+Cámbialas por fotos de instalaciones propias cuando las tengas, con el mismo nombre de archivo.
